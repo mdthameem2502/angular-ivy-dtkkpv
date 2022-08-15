@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
-  list: any = [{}];
+  list: any = [];
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
@@ -35,6 +35,16 @@ export class AppComponent implements OnInit {
       'SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4)
     );
   }
+
+  onEdit(item) {
+    this.registerForm.controls['firstName'].setValue(item.firstName);
+    this.registerForm.controls['lastName'].setValue(item.lastName);
+    this.registerForm.controls['email'].setValue(item.email);
+    this.registerForm.controls['Phone'].setValue(item.Phone);
+    this.registerForm.controls['company'].setValue(item.company);
+    this.registerForm.controls['dob'].setValue(item.dob);
+  }
+  onDelete() {}
   get f() {
     return this.registerForm.controls;
   }

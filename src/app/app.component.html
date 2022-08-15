@@ -126,6 +126,8 @@
           <th>Phone</th>
           <th>Company</th>
           <th>DOB</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -136,6 +138,8 @@
           <td>{{ item.phone }}</td>
           <td>{{ item.company }}</td>
           <td>{{ item.dob }}</td>
+          <td><input type="button" value="Edit" (click)="onEdit(item)" /></td>
+          <td><input type="button" value="Delete" (click)="onDelete()" /></td>
         </tr>
       </tbody>
     </table>
