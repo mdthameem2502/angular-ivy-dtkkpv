@@ -139,7 +139,9 @@
           <td>{{ item.company }}</td>
           <td>{{ item.dob }}</td>
           <td><input type="button" value="Edit" (click)="onEdit(item)" /></td>
-          <td><input type="button" value="Delete" (click)="onDelete()" /></td>
+          <td>
+            <input type="button" value="Delete" (click)="onDelete(item)" />
+          </td>
         </tr>
       </tbody>
     </table>

@@ -40,11 +40,16 @@ export class AppComponent implements OnInit {
     this.registerForm.controls['firstName'].setValue(item.firstName);
     this.registerForm.controls['lastName'].setValue(item.lastName);
     this.registerForm.controls['email'].setValue(item.email);
-    this.registerForm.controls['Phone'].setValue(item.Phone);
+    this.registerForm.controls['Phone'].setValue(item.phone);
     this.registerForm.controls['company'].setValue(item.company);
     this.registerForm.controls['dob'].setValue(item.dob);
   }
-  onDelete() {}
+  onDelete(item) {
+    this.list.splice(
+      this.list.findIndex((a) => a === item),
+      1
+    );
+  }
   get f() {
     return this.registerForm.controls;
   }
